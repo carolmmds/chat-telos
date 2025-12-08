@@ -345,16 +345,10 @@ metadata:
   test_sequence: 1
 
 test_plan:
-  current_focus:
-    - "Quick Replies"
-    - "File Attachments" 
-    - "Info Panel Toggle"
-  stuck_tasks:
-    - "Quick Replies"
-    - "File Attachments"
-    - "Info Panel Toggle"
+  current_focus: []
+  stuck_tasks: []
   test_all: false
-  test_priority: "stuck_first"
+  test_priority: "complete"
 
 agent_communication:
     - agent: "testing"
