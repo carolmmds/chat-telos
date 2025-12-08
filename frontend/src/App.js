@@ -82,24 +82,29 @@ function App() {
       status: 'delivered'
     };
 
-    const updatedConversations = conversations.map(conv => {
-      if (conv.id === selectedConversation.id) {
-        return {
-          ...conv,
-          messages: [...conv.messages, autoMessage],
-          lastMessage: randomResponse,
-          lastMessageTime: new Date().toISOString(),
-          unreadCount: conv.unreadCount + 1
-        };
-      }
-      return conv;
+    setConversations(prevConversations => {
+      const updatedConversations = prevConversations.map(conv => {
+        if (conv.id === selectedConversation?.id) {
+          return {
+            ...conv,
+            messages: [...conv.messages, autoMessage],
+            lastMessage: randomResponse,
+            lastMessageTime: new Date().toISOString(),
+            unreadCount: conv.unreadCount + 1
+          };
+        }
+        return conv;
+      });
+      return updatedConversations;
     });
 
-    setConversations(updatedConversations);
-    setSelectedConversation(prev => ({
-      ...prev,
-      messages: [...prev.messages, autoMessage]
-    }));
+    setSelectedConversation(prev => {
+      if (!prev) return prev;
+      return {
+        ...prev,
+        messages: [...prev.messages, autoMessage]
+      };
+    });
   };
 
   // Handle conversation selection
