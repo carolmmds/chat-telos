@@ -248,9 +248,9 @@ frontend:
 
   - task: "Info Panel Toggle"
     implemented: true
-    working: false
+    working: true
     file: "/app/frontend/src/components/ChatArea.js"
-    stuck_count: 1
+    stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
@@ -260,6 +260,9 @@ frontend:
         - working: false
           agent: "testing"
           comment: "❌ FAILED - Info panel toggle button exists in chat header but clicking it does not hide/show the info panel. Panel remains visible regardless of button clicks."
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - Info panel toggle now fully working! Info button in chat header successfully hides/shows the right info panel. Layout changes from 3 sections to 2 sections when panel is hidden, and back to 3 sections when shown."
 
   - task: "Channel Badges and Icons"
     implemented: true
