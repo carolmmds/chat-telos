@@ -1,7 +1,6 @@
 import React from 'react';
 import { X, Zap } from 'lucide-react';
 import { Button } from './ui/button';
-import { Card } from './ui/card';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const QuickReplies = ({ templates, onSelect, onClose }) => {
