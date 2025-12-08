@@ -118,9 +118,9 @@ export const FileAttachment = ({ onSelect, onClose }) => {
           {quickAttachments.map((item, index) => {
             const Icon = item.icon;
             return (
-              <Card
+              <div
                 key={index}
-                className="p-3 cursor-pointer hover:bg-secondary/50 hover:border-primary/50 transition-all text-center"
+                className="p-3 rounded-lg border border-border bg-card cursor-pointer hover:bg-secondary hover:border-primary/50 transition-all text-center shadow-sm"
               >
                 <input
                   type="file"
@@ -134,7 +134,7 @@ export const FileAttachment = ({ onSelect, onClose }) => {
                   <Icon className="h-6 w-6 text-muted-foreground" />
                   <span className="text-xs text-foreground">{item.label}</span>
                 </label>
-              </Card>
+              </div>
             );
           })}
         </div>
