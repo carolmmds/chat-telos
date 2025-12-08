@@ -200,9 +200,9 @@ frontend:
 
   - task: "File Attachments"
     implemented: true
-    working: false
+    working: true
     file: "/app/frontend/src/components/FileAttachment.js"
-    stuck_count: 1
+    stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
@@ -212,6 +212,9 @@ frontend:
         - working: false
           agent: "testing"
           comment: "❌ FAILED - File attachment dialog opens successfully and 'Select Files' button exists, but dialog close functionality not working properly. Dialog remains visible after clicking close button."
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - File attachments now fully working! Paperclip button opens dialog with 'Anexar Arquivo' title, drag & drop area visible, 3 quick attachment buttons (Imagem, Documento, Arquivo) present, X button closes dialog properly."
 
   - task: "Status Change"
     implemented: true
