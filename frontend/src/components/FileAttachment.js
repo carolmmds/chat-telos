@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { X, Upload, File, Image, FileText } from 'lucide-react';
 import { Button } from './ui/button';
-import { Card } from './ui/card';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const FileAttachment = ({ onSelect, onClose }) => {
