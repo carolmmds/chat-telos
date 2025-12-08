@@ -26,20 +26,26 @@ export const QuickReplies = ({ templates, onSelect, onClose }) => {
         </div>
 
         <div className="grid grid-cols-2 gap-2">
-          {templates.map((template) => (
-            <Card
-              key={template.id}
-              className="p-3 cursor-pointer hover:bg-secondary/50 hover:border-primary/50 transition-all group"
-              onClick={() => onSelect(template)}
-            >
-              <h4 className="font-medium text-sm text-foreground mb-1 group-hover:text-primary transition-colors">
-                {language === 'pt' ? template.title : template.titleEn}
-              </h4>
-              <p className="text-xs text-muted-foreground line-clamp-2">
-                {language === 'pt' ? template.text : template.textEn}
-              </p>
-            </Card>
-          ))}
+          {templates && templates.length > 0 ? (
+            templates.map((template) => (
+              <div
+                key={template.id}
+                className="p-3 rounded-lg border border-border bg-card cursor-pointer hover:bg-secondary hover:border-primary/50 transition-all group shadow-sm"
+                onClick={() => onSelect(template)}
+              >
+                <h4 className="font-medium text-sm text-foreground mb-1 group-hover:text-primary transition-colors">
+                  {language === 'pt' ? template.title : template.titleEn}
+                </h4>
+                <p className="text-xs text-muted-foreground line-clamp-2">
+                  {language === 'pt' ? template.text : template.textEn}
+                </p>
+              </div>
+            ))
+          ) : (
+            <p className="col-span-2 text-sm text-muted-foreground text-center py-4">
+              {language === 'pt' ? 'Nenhum modelo disponível' : 'No templates available'}
+            </p>
+          )}
         </div>
       </div>
     </div>
